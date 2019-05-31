@@ -1,0 +1,45 @@
+<!Doctype html>
+<html>
+	<head>
+<style type="text/css">
+	#wrapper{background-color:#00D8FF;
+	border: 1px solid #5D5D5D;
+	height:1300px;
+	width:1400px;
+	margin: auto;
+}
+span{
+	font-size: 10em;
+}
+	</style>
+	</head>
+	<body>
+		<h1></h1>
+		<div id="wrapper">
+			<form action="", method="POST">
+				<span>Month:</span><input type="text", onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)', maxlength="2", name="month", style="width:400px; height:180px; font-size:100px;"><br>
+				<span>Days:</span><input type="text", onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)', maxlength="2", name="days", style="width:400px; height:180px; font-size:100px;"><br>
+			<input type="submit" vale="click" style="width:200px; height:160px; font-size:80px;">
+			</form>
+		</div>
+	</form>
+	<script>
+function onlyNumber(event){
+	event = event || window.event;
+	var keyID = (event.which) ? event.which:event.keyCode;
+	if((keyId>=48&&keyId<=57)||(keyId>=96&&keyId<=105)||keyId==8||keyId==46||keyId==37||keyId==39)
+		return;
+	else
+		return false;
+}
+function removeChar(event){
+	event=event||window.event;
+	var keyId=(event.which)?event.which:event.keyCode;
+	if(keyId==8||keyId==46||keyId==37||keyId==39)
+		return;
+	else
+		event.target.value=event.target.value.replace(/[^0-9]/g,"");
+}
+	</script>
+</body>
+</html>
